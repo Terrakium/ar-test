@@ -13,17 +13,15 @@
 
   <body style="margin: 0; overflow: hidden">
     <a-scene
-      embedded
       vr-mode-ui="enabled: false"
-      loading-screen="enabled: true;"
+      embedded
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
       renderer="antialias: true; alpha: true">
       <a-camera gps-new-camera="gpsMinDistance: 5"></a-camera>
-
       <a-image
         src="assets/asset.png"
         look-at="[gps-camera]"
-        scale="1 1 1"
+        scale="50 50 50"
         gps-new-entity-place="latitude: 48.389830; longitude: 2.961600;"></a-image>
     </a-scene>
   </body>
