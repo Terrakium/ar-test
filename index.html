@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TEST AR</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script
+      type="text/javascript"
+      src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js"></script>
+    <script
+      type="text/javascript"
+      src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
 
   <body style="margin: 0; overflow: hidden">
     <a-scene
       embedded
-      loading-screen="enabled: false;"
-      arjs="sourceType: webcam; debugUIEnabled: false;">
+      vr-mode-ui="enabled: false"
+      loading-screen="enabled: true;"
+      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+      renderer="antialias: true; alpha: true">
+      <a-camera gps-new-camera="gpsMinDistance: 5"></a-camera>
+
       <a-image
         src="assets/asset.png"
         look-at="[gps-camera]"
         scale="1 1 1"
         gps-new-entity-place="latitude: 48.389830; longitude: 2.961600;"></a-image>
-
-      <a-camera gps-new-camera rotation-reader></a-camera>
     </a-scene>
   </body>
 </html>
