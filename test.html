@@ -13,14 +13,20 @@
   <body>
     <a-scene
       vr-mode-ui="enabled: false"
+      embedded
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
       renderer="antialias: true; alpha: true">
-      <a-camera gps-new-camera="gpsMinDistance: 5"></a-camera>
+      <a-camera gps-new-camera="gpsMinDistance: 5" rotation-reader></a-camera>
       <a-entity
         material="color: red"
         geometry="primitive: box"
         gps-new-entity-place="latitude: 48.390815; longitude: 2.9626081"
         scale="10 10 10"></a-entity>
+      <a-text
+        value="Numeritest"
+        look-at="[gps-new-camera]"
+        gps-new-entity-place="latitude: 48.389815; longitude: 2.9616081"
+        scale="10 10 10"></a-text>
     </a-scene>
   </body>
 </html>
